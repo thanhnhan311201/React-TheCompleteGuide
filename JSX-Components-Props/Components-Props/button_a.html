@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: "Helvetica Neue";
+        background-color: #f4f4f5;
+      }
+
+      body > div {
+        margin: auto;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+        padding: 12px 48px;
+        border-radius: 50px;
+        min-width: 120px;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .btn:hover {
+        opacity: 0.8;
+      }
+
+      .btn--success {
+        background-color: #71be34;
+      }
+
+      .btn--warning {
+        background-color: #ffb702;
+      }
+
+      .btn--danger {
+        background-color: #ff623d;
+      }
+
+      .btn--disabled {
+        opacity: 0.5 !important;
+        cursor: default;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const Button = ({ title, href, target, onClick }) => {
+        let Component;
+        const props = {};
+
+        if (href) {
+          Component = "a";
+          props.href = href;
+          props.target = target;
+        }
+        if (onClick) {
+          Component = "button";
+          props.onClick = onClick;
+        }
+
+        return (
+          <Component className="btn btn--success" {...props}>
+            {title}
+          </Component>
+        );
+      };
+
+      function App() {
+        return (
+          <div id="wrapper">
+            <Button
+              title="Click me!"
+              // href="https://fullstack.edu.vn/"
+              // target="_blank"
+              onClick={() => console.log(Math.random())}
+            />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

@@ -50,3 +50,4 @@ const jsx = (
     <h2>Heading 2</h2>
   </React.Fragment>
 );
+// - Khi chúng ta gặp warning "Each child in a list should have a unique "key" prop.", thì chúng ta nên thêm prop key.
