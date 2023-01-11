@@ -8,3 +8,5 @@
 - Ngoài ra React còn cung cấp cho "developer" rất nhiều tính năng và công cụ khác nhau để xây dựng các giao diện người dùng phức tạp trở nên dễ dàng.
 - Đối với các trang web được xây dựng bởi react, thì các thành phần (components) của trang web đó sẽ được chia nhỏ ra, và mỗi component sẽ có một chức năng riêng khác nhau. Do đó sẽ giúp ích cho việc tái sử dụng các thành phần component, đồng thời cũng giúp dễ dàng hơn trong việc quản lý và bảo trì.
 - Đối với các trang web được xây dựng bởi react, thì các thành phần (components) của trang web đó sẽ được chia nhỏ ra, và mỗi component sẽ có một chức năng riêng khác nhau. Do đó sẽ giúp cích cho việc tái sử dụng các thành phần component, ddoondf thời cũng giúp trang web được xây dựng
+
+## Controlled Components và Uncontrolled Components

@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+// - Nhiệm vụ chính của React component và React app là một chức năng chính là render UI, tương tác với user input, re-render
+// component, quản lý state và props,... tất cả đều là để render UI.
+// - Side effect là tất cả những tác động lên chương trình như: send http request, lưu trữ data trong browser storage, timer
+// hoặc interval,... Những task đó không liên quan tới việc render UI, do đó chúng ta nên xử lý những task đó tại một nơi khác
+// để tránh tạo ra bug mỗi khi component re-render.
 // - Chúng ta sẽ sử dụng useEffect khi chúng ta cần side effects, tức là khi chúng ta tác động lên chương trình làm thay đổi
 // dữ liệu, chẳng hạn như:
 //    1. Update DOM
@@ -375,7 +380,7 @@ import { useEffect, useState } from "react";
 // - Ứng dụng 2: Render comment in Chat App
 // - Trong ví dụ này chúng ta sẽ tạo ra một fake event tượng trưng cho sự kiện user chat, nhiệm vụ của chúng ta là bắt sự
 // kiện chat của người dùng rồi render ra tin nhắn chat của người dùng. Tuy nhiên khi mà chúng ta đổi sang một kênh chat khác
-// (hoặc rời khỏi kênh chat)thì chúng ta sẽ không lắng nghe sự kiện chat của kênh cũ trước đó, cho nên chúng ta phải dùng
+// (hoặc rời khỏi kênh chat) thì chúng ta sẽ không lắng nghe sự kiện chat của kênh cũ trước đó, cho nên chúng ta phải dùng
 // cleanup function để removeEventListener ở kênh chat trước đó, nếu không thì khi mà chúng ta đang ở kênh chat mới thì chúng
 // ta sẽ vừa bắt tin nhắn chat ở kênh chat 1 và kênh chat 2 rồi render ra ở kênh chat 2. Điều này dẫn tới ở bên kênh chat 2
 // sẽ vừa có tin nhắn chat ở kênh 1 và kênh 2, đó là BUG.
@@ -435,3 +440,6 @@ import { useEffect, useState } from "react";
     );
   }
 }
+
+// - Lưu ý: tất cả những state, những biến, data được sử dụng bên trong callback function của useEffect mà có thể cập nhật tùy
+// vào mục đích sử dụng của component thì phải được thêm vào dependencies array.

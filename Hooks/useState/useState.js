@@ -123,3 +123,18 @@ function App() {
 // - Trong React, khi component thực hiện "setState" thì React sẽ thực hiện phép so sánh nghiệm ngặt === để kiểm tra trạng
 // thái hiện tại và trạng thái mới có khác nhau hay không. Nếu 2 trạng thái khác nhau thì React mới re-render lại component,
 // còn nếu không khác thì sẽ không re-render component.
+
+// - Chúng ta có thể truyền data từ component cha xuống các component con thông qua props, vậy để có thể truyền data từ
+// component con lên component cha thì chúng ta sẽ truyền hàm thông qua props.
+// - Ở component cha chúng ta sẽ tạo một hàm nhận đối số truyền vào là dữ liệu và component con gửi lên, sau đó chúng ta sẽ
+// truyền hàm đó cho component con thông qua props, sau đó ở component con chúng ta sẽ gọi hàm đó thông qua biến props và
+// truyền vào đối số là dữ liệu cần gửi lên. Lúc này ở trên component cha thì chúng ta sẽ nhận được dữ liệu được component gửi
+// lên thông qua đối số hàm nhận được.
+// - Một quy ước cho đặt tên props để truyền hàm gửi dữ liệu là đặt theo sự kiện như (onClick, onChange,...), giả sử chúng ta
+// cần gửi một form chứa data thì chúng ta sẽ đặt là onSubmitForm.
+
+// - Ngoài ra chúng có thể sử dụng useState để làm dynamic style css, bằng cách chúng ta tạo một state với giá trị là
+// true hoặc false, sau đó chúng ta dựa vào điều kiện mà chúng ta tạo cho user để có thể dynamic style css.
+// - Dựa vào điều kiện true false của state đó, chúng ta có thể style css theo nhiều cách khác nhau. Chúng ta có thể style
+// inline trực tiếp vào component, hoặc chúng ta thể style external bằng cách sử dụng class (ví dụ như class "invalid") rồi
+// sau đó chúng ta thể dynamic add class cho component đó.

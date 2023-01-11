@@ -14,7 +14,7 @@
 //      + useDebugValue
 
 import {
-  ususeState,
+  useState,
   useEffect,
   useLayoutEffect,
   useRef,
@@ -69,9 +69,13 @@ function ComponentB() {
   return <h1>Hooks</h1>;
 }
 
-// - Hooks chỉ dùng cho function component
 // - Component đơn giản và trở nên dễ hiểu
 //    - Không bị chia logic ra như methods trong lifecycle của Class Component
 //    - Không cần sử dựng "this"
 // - Life cycle là khoảng thời gian từ khi component đó được thêm vào DOM, sau đó tương tác hoạt động trên browser cho đến
 // khi được gõ khởi DOM.
+
+// - Lưu ý:
+//    + Tất cả các React Hook phải được sử dụng bên trong React Function Component và Custom React Hook Function.
+//    + Chúng ta chỉ được phép call React Hook ở top level của React Function Component hoặc Custom React Hook Function,
+//      không được call trong bất kỳ function hay block statements nào.
