@@ -192,7 +192,7 @@ export default AuthContext;
 // - Lưu ý:
 //    + Không nên sử dụng context cho các component có tính tái sử dụng mà nên sử dụng props chain. Ví dụ như component Button,
 //      bởi vì component sẽ có nhiều logic chức năng để tái sử dụng cho nhiều mục đích khác nhau nên việc sử dụng context là
-//      hợp lý. Do đó chúng ta chỉ nên sử dụng context cho các component có 1 chức năng cụ thể.
+//      không hợp lý. Do đó chúng ta chỉ nên sử dụng context cho các component có 1 chức năng cụ thể.
 //    + Không nên sử dụng context cho các component có có tần suất cập nhật state liên tục, bởi vì context cập nhật state sẽ
 //      chậm hơn so với việc sử dụng prop chain để cập nhật state bằng cách phương thức setState, do đó context không tối ưu
 //      hóa cho các component có tần suất cập nhật state liên tục.
