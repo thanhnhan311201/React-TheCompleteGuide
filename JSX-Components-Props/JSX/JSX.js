@@ -19,7 +19,7 @@ const ul = (
     <li>{reactCourse}</li>
   </ul>
 );
-// - Điều lưu ý tiếp the0 là khi chúng cần thêm thuộc tính thì vẫn phải tuân thủ như cách viết React.createElement, như muốn
+// - Điều lưu ý tiếp theo là khi chúng cần thêm thuộc tính thì vẫn phải tuân thủ như cách viết React.createElement, như muốn
 // thêm class thì phải sử dụng thuộc tính là className, các thuộc tính CSS phải viết theo quy tắc camelCase,...
 // - Ví dụ:
 const postItem = (
