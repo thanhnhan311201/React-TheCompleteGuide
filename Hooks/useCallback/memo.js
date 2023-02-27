@@ -28,3 +28,6 @@ export default React.memo(Content);
 // ta sẽ wrap các component con bởi memo. Hoặc trong trường hợp chúng ta có một component có nhiều state, UI hoặc xử lý logic
 // phức tạp nên việc re-render khi không cần thiết cũng sẽ giảm hiệu suất chương trình, thì lúc đó chúng ta cũng sẽ wrap
 // component đó bằng memo.
+// - Tuy nhiên chúng ta không nên sử dụng React.memo cho tất cả các component, bởi vì khi chúng ta sử dụng React.memo thì
+// React phải ghi nhớ tất cả props cũ và phải xử lý so sánh nên sẽ gây chi phí không đáng có cho các component nhỏ không
+// cần thiết, cho nên phải cân nhắc khi sử dụng React.memo.

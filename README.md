@@ -11,4 +11,21 @@
 
 ## Cách hoạt động của React
 
+- React là một thư viện xây dựng giao diện người dùng; tuy nhiên React chỉ thật sự quản lý các component, state, props, context và các dữ liệu đi kèm; còn việc hiển thị lên giao diện thì ReactDOM sẽ thực hiện.
+- Trong thực tế React sẽ sử dụng Virtual DOM (DOM ảo), DOM ảo sẽ tương tự như DOM thật (HTML DOM) tuy nhiên nó không có khả năng tương tác lên browser.
+- React lấy một snapshot của Virtual DOM (có thể hiểu là bản ghi trạng thái ngay lúc đó) ngay trước khi áp dụng bất kỳ bản cập nhật nào. Sau đó, nó sử dụng snapshot này để so sánh với Virtual DOM sau khi được cập nhật. Khi props, state hoặc context thay đổi thì lúc này component sẽ được render lại, do đó Virtual DOM sẽ được cập nhật. Quá trình tiếp theo React sử dụng thuật toán Diffing để so sánh và đối chiếu để biết được sự cập nhật được diễn ra ở đâu sau đó sẽ thông báo cho ReactDOM. Lúc này ReactDOM sẽ tương tác với DOM thật và chỉ cập nhật những element thay đổi và bỏ qua những elements không liên quan.
+- Với việc sử dụng DOM ảo thì sẽ giúp cho hiệu suất của trang web tốt hơn, bởi vì **mỗi lần re-render component thì element tương ứng với các child element trong DOM ảo sẽ được tạo lại mới (component và các child component bên trong nó đều sẽ được re-render lại)**, tuy nhiên việc tạo lại chưa chắc sẽ khác so với phiên bản cũ, do đó nếu như React tương tác với DOM thật để cập nhật toàn bộ DOM sẽ tốn rất nhiều chi phí hơn so với việc chỉ cập nhật những thành phần thay đổi, giúp cho hiệu suất của browser nhanh hơn.
+
+![](./Screenshots/virtualDOM.webp)
+
+![](./Screenshots/virtualDOM.png)
+
+## State Scheduling and Batching
+
+![](./Screenshots/state-scheduling-batching-1.png)
+
+![](./Screenshots/state-scheduling-batching-2.png)
+
+Tham khảo: [State Scheduling and Batching in React](https://www.youtube.com/watch?v=VMbsYXsrhek)
+
 ## Controlled Components và Uncontrolled Components
