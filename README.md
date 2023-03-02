@@ -1,3 +1,11 @@
+##### Table of content
+
+- [ReactJS - The Complete Guide](#reactjs---the-complete-guide)
+  - [React là gì? Công dụng của React](#react-là-gì-công-dụng-của-react)
+  - [Cách hoạt động của React](#cách-hoạt-động-của-react)
+  - [State Scheduling and Batching](#state-scheduling-and-batching)
+  - [Controlled Components và Uncontrolled Components](#controlled-components-và-uncontrolled-components)
+
 # ReactJS - The Complete Guide
 
 ## React là gì? Công dụng của React
