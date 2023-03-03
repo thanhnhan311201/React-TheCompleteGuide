@@ -1,5 +1,6 @@
 import { ADD_ITEM } from "./constants";
 import { REMOVE_ITEM } from "./constants";
+import { CLEAR_CART } from "./constants";
 
 const cartInitState = {
   items: [],
@@ -56,6 +57,8 @@ const cartReducer = (state, action) => {
         items: state.items.filter((item) => item.id !== action.payload),
         totalAmount: state.totalAmount - removedItem.price * removedItem.amount,
       };
+    case CLEAR_CART:
+      return cartInitState;
     default:
       throw new Error("Invalid action.");
   }

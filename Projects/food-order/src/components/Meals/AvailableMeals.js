@@ -1,37 +1,64 @@
+import { useState, useEffect } from "react";
+
 import MealItem from "./MealItem/MealItem";
 import Card from "../UI/Card";
 
 import classes from "./AvailableMeals.module.css";
 
-const DUMMY_MEALS = [
-  {
-    id: "m1",
-    name: "Sushi",
-    description: "Finest fish and veggies",
-    price: 22.99,
-  },
-  {
-    id: "m2",
-    name: "Schnitzel",
-    description: "A german specialty!",
-    price: 16.5,
-  },
-  {
-    id: "m3",
-    name: "Barbecue Burger",
-    description: "American, raw, meaty",
-    price: 12.99,
-  },
-  {
-    id: "m4",
-    name: "Green Bowl",
-    description: "Healthy...and green...",
-    price: 18.99,
-  },
-];
-
 const AvailableMeals = (props) => {
-  const mealsList = DUMMY_MEALS.map((meal) => (
+  const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        setHttpError(false);
+        const response = await fetch(
+          "https://react-learning-2b31f-default-rtdb.asia-southeast1.firebasedatabase.app/meals.json"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        const data = await response.json();
+
+        const loadMeals = [];
+        for (const key in data) {
+          loadMeals.push({
+            id: key,
+            name: data[key].name,
+            description: data[key].description,
+            price: data[key].price,
+          });
+        }
+        setMeals(loadMeals);
+      } catch (err) {
+        console.log(err.message);
+        setHttpError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    })();
+  }, []);
+
+  if (httpError) {
+    return (
+      <div className={classes["meal-error"]}>
+        <p>{httpError}</p>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className={classes["meal-loading"]}>
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  const mealsList = meals.map((meal) => (
     <MealItem
       name={meal.name}
       description={meal.description}
