@@ -99,6 +99,7 @@ const Cart = (props) => {
         </button>
       </div>
     </>
+    
   );
 
   return (
