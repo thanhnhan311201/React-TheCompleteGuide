@@ -11,6 +11,8 @@
     - [Sử dụng Redux tách biệt với React](#sử-dụng-redux-tách-biệt-với-react)
     - [Sử dụng Redux với React kèm với package "react-redux"](#sử-dụng-redux-với-react-kèm-với-package-react-redux)
   - [Redux-toolkit](#redux-toolkit)
+  - [Async Tasks with Redux](#async-tasks-with-redux)
+  - [Redux Thunk](#redux-thunk)
 
 # Redux
 
@@ -308,3 +310,24 @@ Tham khảo:
 
 1. [[React] Cùng tìm hiểu về Redux Toolkit, một phiên bản mới của Redux](https://viblo.asia/p/react-cung-tim-hieu-ve-redux-toolkit-mot-phien-ban-moi-cua-redux-XL6lA6yg5ek)
 2. [Redux toolkit - Refactor lại redux structure](https://viblo.asia/p/redux-toolkit-refactor-lai-redux-structure-RQqKL0pmK7z)
+
+## Async Tasks with Redux
+
+![](../Screenshots/async-redux.png)
+
+![](../Screenshots/async-redux-2.png)
+
+![](../Screenshots/async-redux-3.png)
+
+## Redux Thunk
+
+- Redux Thunk là một Middleware cho phép bạn viết các Action trả về một function thay vì một plain javascript object bằng cách trì hoãn việc đưa action đến reducer.
+- Redux Thunk được sử dụng để xử lý các logic bất đồng bộ phức tạp cần truy cập đến Store hoặc đơn giản là việc lấy dữ liệu như Ajax request (giả sử chúng ta cần gửi dữ liệu sau khi được biến đổi trong store để gửi về server, chúng ta có thể xử lý bằng cách lấy dữ liệu sau khi biến đổi bên trong store và thực hiện gọi api để gửi dữ liệu, hoặc chúng ta có thể sử dụng **Redux Thunk** để tạo một action và chúng ta sẽ viết logic gọi api gửi dữ liệu bên trong đó bởi vì Redux không cho phép chúng ta viết async code bên trong Reducer).
+
+![](../Screenshots/redux-thunk.png)
+
+Tham khảo:
+
+1. [How Does Redux-Thunk Work?](https://user3141592.medium.com/understanding-the-redux-thunk-source-code-b3f8b930faf6)
+2. [Tìm hiểu về Redux Thunk](https://viblo.asia/p/tim-hieu-ve-redux-thunk-Qbq5Qkm4ZD8)
+3. [Writing Logic with Thunks](https://redux.js.org/usage/writing-logic-thunks)
