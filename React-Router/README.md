@@ -1,7 +1,3 @@
-##### Table of content
-
-- [React Router](#react-router)
-
 # React Router
 
 ![](../Screenshots/react-router.png)
