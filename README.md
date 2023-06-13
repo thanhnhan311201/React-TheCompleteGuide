@@ -37,3 +37,4 @@
 Tham khảo: [State Scheduling and Batching in React](https://www.youtube.com/watch?v=VMbsYXsrhek)
 
 ## Controlled Components và Uncontrolled Components
+Nothing
